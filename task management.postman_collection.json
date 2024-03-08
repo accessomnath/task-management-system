@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "40a1683e-da72-40aa-83d8-388089f162c6",
+		"name": "task management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3298875"
+	},
+	"item": [
+		{
+			"name": "list task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "one task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/task/95",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"task",
+						"95"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "tyrrtyrty",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "fghfgh",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Incomplete",
+							"type": "text"
+						},
+						{
+							"key": "pdf_path",
+							"type": "file",
+							"src": "/C:/Users/User/Downloads/Somnath_backend (1).pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/tasks/95",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"tasks",
+						"95"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\r\n     \r\n            \"title\": \"Test Task 11\",\r\n            \"description\": \"Description for test task 1.\",\r\n            \"status\": \"Incomplete\",\r\n            \"pdf_path\": \"/path/to/test1.pdf\",\r\n            \"excel_path\": \"/path/to/test1.xlsx\",\r\n            \"createdAt\": \"2024-03-06T16:49:45.000Z\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/tasks/96",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"tasks",
+						"96"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create task with pdf uploads",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "tyrrtyrty",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "fghfgh",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Incomplete",
+							"type": "text"
+						},
+						{
+							"key": "pdf_path",
+							"type": "file",
+							"src": "/C:/Users/User/Downloads/Somnath_backend (1).pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create bulk task with excel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "excel_path",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
